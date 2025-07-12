@@ -1,0 +1,6 @@
+theme = tokyonight-storm
+cursor-opacity = 1
+background-opacity = 0.97
+window-padding-x = 2
+keybind = shift+enter=text:\n
+

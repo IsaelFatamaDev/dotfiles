@@ -1,0 +1,14 @@
+export CONFIG_PATH=$HOME/dev/config/dotfiles
+
+# if system is mac load mac specific zshrc
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  source "$CONFIG_PATH/zsh/zshrc.mac"
+fi
+
+# if system is linux load linux specific zshrc
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  source "$CONFIG_PATH/zsh/zshrc.linux"
+fi
+
+# Load aliases
+source "$CONFIG_PATH/zsh/zshrc.alias"

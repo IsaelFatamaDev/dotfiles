@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Script para probar Hyprlock
+echo "Probando Hyprlock..."
+hyprlock 

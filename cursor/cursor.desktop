@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Cursor
+Exec=/opt/cursor/cursor.AppImage
+Icon=cursor
+Type=Application
+Categories=Development;IDE;
+StartupNotify=true
+Terminal=false
+
