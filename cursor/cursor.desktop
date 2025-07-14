@@ -1,9 +1,8 @@
+# ~/.local/share/applications/cursor.desktop
 [Desktop Entry]
 Name=Cursor
-Exec=/opt/cursor/cursor.AppImage
-Icon=cursor
 Type=Application
-Categories=Development;IDE;
-StartupNotify=true
-Terminal=false
-
+Categories=Development;
+Icon=/opt/cursor.png
+Exec=/opt/cursor.appimage
+Exec=/opt/cursor.appimage --enable-features=UseOzonePlatform --ozone-platform=wayland %F

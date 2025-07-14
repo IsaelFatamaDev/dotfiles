@@ -12,3 +12,5 @@ fi
 
 # Load aliases
 source "$CONFIG_PATH/zsh/zshrc.alias"
+
+PATH=~/.console-ninja/.bin:$PATH

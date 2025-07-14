@@ -1,36 +1,450 @@
 {
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.minimap.enabled": true,
-  "editor.renderWhitespace": "all",
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "files.associations": {
-    "*.graphql": "graphql"
-  },
-  "rubyLsp.rubyExecutablePath": "/home/luis/.local/share/mise/installs/ruby/3.2.8/bin/ruby",
-  "rubyLsp.rubyVersionManager": {
-      "identifier": "mise",
-  },
-  "vsicons.dontShowNewVersionMessage": true,
-  "window.commandCenter": true,
-  "workbench.colorTheme": "Cursor Dark Midnight",
-  "workbench.iconTheme": "vscode-icons",
-  "workbench.sideBar.location": "right",
-  "extensions.ignoreRecommendations": true,
-  "files.autoSave": "afterDelay",
-  "git.autofetch": true
+     "symbols.hidesExplorerArrows": true,
+     "symbols.folders.associations": {},
+     "json.format.enable": true,
+     "[css]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+     },
+     "remote.SSH.remotePlatform": {
+          "ServidorLAMP": "linux",
+          "serverprueba": "linux",
+          "server": "linux",
+          "light": "linux",
+          "*.gitpod.io": "linux"
+     },
+     "remote.SSH.showLoginTerminal": true,
+     "editor.linkedEditing": true,
+     "files.trimTrailingWhitespace": true,
+     "[javascript]": {
+          "editor.defaultFormatter": "vscode.typescript-language-features",
+          "editor.suggest.localityBonus": true,
+          "editor.suggest.showKeywords": true,
+          "files.trimTrailingWhitespace": true,
+          "editor.renderWhitespace": "none",
+          "editor.tabSize": 5,
+          "editor.insertSpaces": true
+     },
+     "prettier.tabWidth": 5,
+     "prettier.useTabs": false,
+     "json.format.keepLines": true,
+     "editor.detectIndentation": true,
+     "editor.formatOnPaste": true,
+     "eslint.format.enable": true,
+     "editor.autoIndent": "advanced",
+     "html.format.contentUnformatted": "pre,code,textarea",
+     "[html]": {
+          "editor.defaultFormatter": "vscode.html-language-features"
+     },
+     "editor.fontVariations": true,
+     "diffEditor.codeLens": true,
+     "editor.formatOnType": true,
+     "git.autofetch": true,
+     "githubPullRequests.pushBranch": "always",
+     "editor.fontLigatures": true,
+     "fiveServer.php.executable": "C:\\xampp\\php\\php.exe",
+     "fiveServer.php.ini": "C:\\xampp\\php",
+     "[oraclesql]": {
+          "editor.suggest.showSnippets": true,
+          "editor.quickSuggestions": {
+               "comments": "on",
+               "strings": "on",
+               "other": "on"
+          }
+     },
+     "editor.tabSize": 5,
+     "workbench.colorCustomizations": {
+          "editor.selectionBackground": "#e5ebff31",
+          "editor.lineHighlightBackground": "#3b3b3b42",
+          "editor.lineHighlightBorder": "#69696943",
+          "[One Dark Pro]": {
+               "activityBar.background": "#282c34cc",
+               "breadcrumb.background": "#00000000",
+               "button.background": "#40475499",
+               "dropdown.background": "#21252b4d",
+               "dropdown.border": "#21252b4d",
+               "editor.background": "#282c3499",
+               "editor.lineHighlightBackground": "#2c313c4d",
+               "editorGroupHeader.tabsBackground": "#282c34cc",
+               "editorGutter.background": "#00000000",
+               "editorPane.background": "#00000000",
+               "input.background": "#1d1f234d",
+               "list.activeSelectionBackground": "#2c313a99",
+               "list.hoverBackground": "#2c313a99",
+               "list.inactiveSelectionBackground": "#32384299",
+               "menu.background": "#21252b99",
+               "multiDiffEditor.headerBackground": "#00000000",
+               "notebook.cellEditorBackground": "#00000000",
+               "panel.background": "#282c34cc",
+               "peekViewEditorGutter.background": "#00000000",
+               "peekViewResult.background": "#22262b4d",
+               "peekViewTitle.background": "#2525264d",
+               "settings.focusedRowBackground": "#00000000",
+               "sideBar.background": "#21252bcc",
+               "sideBarSectionHeader.background": "#282c344d",
+               "sideBarStickyScroll.background": "#21252b66",
+               "sideBarTitle.background": "#00000000",
+               "statusBar.background": "#21252bcc",
+               "statusBar.noFolderBackground": "#21252bcc",
+               "tab.activeBackground": "#282c3499",
+               "tab.activeBorder": "#b4b4b499",
+               "tab.border": "#00000000",
+               "tab.inactiveBackground": "#00000000",
+               "tab.unfocusedActiveBackground": "#282c3499",
+               "welcomePage.tileBackground": "#21252b4d",
+               "welcomePage.tileHoverBackground": "#282c3499"
+          }
+     },
+     "yaml.schemas": {
+          "file:///c%3A/Users/javie/.vscode/extensions/atlassian.atlascode-3.0.7/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+     },
+     "security.workspace.trust.untrustedFiles": "open",
+     "terminal.integrated.fontSize": 14,
+     "terminal.integrated.fontFamily": "'CaskaydiaMono NF', monospace",
+     "terminal.integrated.cursorStyle": "block",
+     "terminal.integrated.letterSpacing": 1.2,
+     "terminal.integrated.lineHeight": 1.5,
+     "workbench.tree.indent": 20,
+     "workbench.tree.expandMode": "singleClick",
+     "editor.definitionLinkOpensInPeek": true,
+     "workbench.editor.wrapTabs": true,
+     "merge-conflict.autoNavigateNextConflict.enabled": true,
+     "liveServer.settings.fullReload": true,
+     "[json]": {
+          "editor.defaultFormatter": "vscode.json-language-features"
+     },
+     "[markdown]": {
+          "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+          "diffEditor.ignoreTrimWhitespace": true
+     },
+     "json.schemas": [],
+     "draw.folder.structure.exclude": [
+          "node_modules",
+          ".git",
+          "dist",
+          ".next",
+          "out"
+     ],
+     "draw.folder.structure.style": "EmojiFun",
+     "[jsonc]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+     },
+     "terminal.integrated.profiles.windows": {
+          "PowerShell": {
+               "source": "PowerShell",
+               "icon": "terminal-powershell"
+          },
+          "Command Prompt": {
+               "path": [
+                    "${env:windir}\\Sysnative\\cmd.exe",
+                    "${env:windir}\\System32\\cmd.exe"
+               ],
+               "args": [],
+               "icon": "terminal-cmd"
+          },
+          "Git Bash": {
+               "source": "Git Bash"
+          },
+          "Windows PowerShell": {
+               "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+          }
+     },
+     "terminal.integrated.profiles.linux": {
+          "bash": {
+               "path": "bash",
+               "icon": "terminal-bash"
+          },
+          "zsh": {
+               "path": "zsh",
+               "icon": "terminal-tmux"
+          },
+          "fish": {
+               "path": "fish",
+               "icon": "terminal-linux"
+          }
+     },
+     "code-runner.runInTerminal": true,
+     "workbench.editor.empty.hint": "hidden",
+     "gitlens.graph.minimap.dataType": "lines",
+     "gitlens.graph.minimap.additionalTypes": [
+          "localBranches",
+          "stashes",
+          "remoteBranches",
+          "tags"
+     ],
+     "workbench.editor.showTabs": "multiple",
+     "workbench.editor.tabSizingFixedMaxWidth": 165,
+     "workbench.editor.tabSizing": "fixed",
+     "explorer.openEditors.sortOrder": "alphabetical",
+     "editor.lineHeight": 32,
+     "editor.suggestLineHeight": 30,
+     "search.useIgnoreFiles": false,
+     "search.exclude": {
+          "**/vendor/{[^l],?[^ai]}*": true,
+          "**/public/{[^i],?[^n]}*": true,
+          "**/node_modules": true,
+          "**/dist": true,
+          "**/_ide_helper.php": true,
+          "**/composer.lock": true,
+          "**/package-lock.json": true,
+          "storage": true,
+          ".phpunit.result.cache": true
+     },
+     "npm.packageManager": "auto",
+     "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
+     "emmet.includeLanguages": {
+          "blade": "html",
+          "vue-html": "html",
+          "vue": "html",
+          "react": "html",
+          "javascript": "html"
+     },
+     "files.associations": {
+          ".php_cs": "php",
+          ".php_cs.dist": "php"
+     },
+     "editor.tokenColorCustomizations": {
+          "textMateRules": [
+               {
+                    "scope": [
+                         "comment",
+                         "keyword",
+                         "variable.language",
+                         "entity.other.attribute-name.html",
+                         "entity.other.attribute-name",
+                         "keyword.control",
+                         "storage.type",
+                         "comment",
+                         "comment.block",
+                         "comment.line"
+                    ],
+                    "settings": {
+                         "fontStyle": ""
+                    }
+               }
+          ]
+     },
+     "terminal.integrated.smoothScrolling": true,
+     "terminal.integrated.shellIntegration.enabled": true,
+     "terminal.integrated.shellIntegration.environmentReporting": true,
+     "files.autoSave": "afterDelay",
+     "files.autoSaveDelay": 1,
+     "terminal.integrated.defaultProfile.windows": "PowerShell",
+     "tabnine.experimentalAutoImports": true,
+     "editor.guides.bracketPairs": true,
+     "editor.screenReaderAnnounceInlineSuggestion": false,
+     "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+     "git.openRepositoryInParentFolders": "never",
+     "redhat.telemetry.enabled": true,
+     "liveServer.settings.donotShowInfoMsg": true,
+     "window.menuBarVisibility": "compact",
+     "editor.defaultColorDecorators": "auto",
+     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+     "editor.inlineSuggest.showToolbar": "always",
+     "github.copilot.chat.welcomeMessage": "always",
+     "github.copilot.enable": {
+          "*": true,
+          "plaintext": false,
+          "markdown": false,
+          "scminput": false
+     },
+     "editor.stickyScroll.enabled": false,
+     "editor.cursorBlinking": "smooth",
+     "workbench.productIconTheme": "fluent-icons",
+     "settingsSync.ignoredExtensions": ["none"],
+     "githubPullRequests.createOnPublishBranch": "never",
+     "debug.enableStatusBarColor": true,
+     "accessibility.signals.terminalBell": {
+          "sound": "on"
+     },
+     "task.saveBeforeRun": "always",
+     "workbench.editor.highlightModifiedTabs": true,
+     "terminal.integrated.enableVisualBell": true,
+     "github.copilot.chat.scopeSelection": true,
+     "[dart]": {
+          "editor.formatOnSave": true,
+          "editor.formatOnType": true,
+          "editor.rulers": [80],
+          "editor.selectionHighlight": false,
+          "editor.suggestSelection": "first",
+          "editor.tabCompletion": "onlySnippets",
+          "editor.wordBasedSuggestions": "off"
+     },
+     "editor.wordWrap": "on",
+     "editor.fontSize": 13,
+     "[yaml]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+     },
+     "github.copilot.editor.enableCodeActions": true,
+     "editor.autoClosingBrackets": "always",
+     "editor.autoClosingComments": "always",
+     "owtc.autoClose": "Enable",
+     "workbench.tree.stickyScrollMaxItemCount": 2,
+     "terminal.integrated.env.windows": {},
+     "workbench.sideBar.location": "right",
+     "workbench.colorTheme": "Cursor Dark Midnight",
+     "console-ninja.featureSet": "Community",
+     "diffEditor.ignoreTrimWhitespace": true,
+     "editor.emptySelectionClipboard": false,
+     "window.newWindowDimensions": "inherit",
+     "editor.snippetSuggestions": "top",
+     "files.insertFinalNewline": true,
+     "files.trimFinalNewlines": true,
+     "editor.guides.indentation": false,
+     "scm.diffDecorations": "none",
+     "editor.hover.delay": 1500,
+     "editor.hover.enabled": true,
+     "git.decorations.enabled": false,
+     "workbench.startupEditor": "none",
+     "editor.lightbulb.enabled": "off",
+     "editor.selectionHighlight": false,
+     "editor.overviewRulerBorder": false,
+     "editor.occurrencesHighlight": "off",
+     "problems.decorations.enabled": false,
+     "editor.renderControlCharacters": false,
+     "editor.gotoLocation.multipleReferences": "goto",
+     "editor.gotoLocation.multipleDefinitions": "goto",
+     "editor.gotoLocation.multipleDeclarations": "goto",
+     "workbench.editor.enablePreviewFromQuickOpen": false,
+     "editor.gotoLocation.multipleImplementations": "goto",
+     "editor.gotoLocation.multipleTypeDefinitions": "goto",
+     "material-icon-theme.saturation": 1,
+     "editor.smoothScrolling": true,
+     "editor.fastScrollSensitivity": 200,
+     "editor.hideCursorInOverviewRuler": true,
+     "[scss]": {
+          "editor.defaultFormatter": "vscode.css-language-features"
+     },
+     "[typescript]": {
+          "editor.defaultFormatter": "vscode.typescript-language-features"
+     },
+     "terminal.integrated.stickyScroll.enabled": false,
+     "terminal.integrated.tabs.location": "left",
+     "editor.minimap.enabled": false,
+     "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
+     "window.commandCenter": false,
+     "window.restoreWindows": "all",
+     "animations.Install-Method": "Custom CSS and JS",
+     "apc.imports": [
+          "file:///c:/Users/javie/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
+     ],
+     "sqldeveloper.telemetry.enabled": true,
+     "oracledevtools.connectionConfiguration.configFilesFolder": "C:\\Users\\javie\\Oracle\\network\\admin",
+     "oracledevtools.connectionConfiguration.walletFileFolder": "C:\\Users\\javie\\Oracle\\network\\admin",
+     "oracledevtools.bookmarkFileFolder": "C:\\Users\\javie\\Oracle\\oracle.oracledevtools",
+     "oracledevtools.download.otherFolder": "C:\\Users\\javie\\downloads",
+     "oracledevtools.OracleCloudInfrastructure.profiles": [
+          {
+               "profileName": "DEFAULT",
+               "tenancyID": "ocid1.tenancy.oc1..aaaaaaaazwz6bmfoumnnjh6fckcgcoyvf67jg7oi2rxiqfkj6flaqfejfcdq",
+               "tenancyName": "isaelfatama"
+          }
+     ],
+     "oracledevtools.connections": [
+          {
+               "authenticationType": 2,
+               "dBAPrivilege": "None",
+               "userID": "ADMIN",
+               "passwordSaved": false,
+               "dataSource": "movilsurbd_tpurgent",
+               "connectionType": 1,
+               "tnsAdmin": "c:\\Users\\javie\\OneDrive\\Documentos\\Wallet_movilSur",
+               "walletLocation": "c:\\Users\\javie\\OneDrive\\Documentos\\Wallet_movilSur",
+               "useConnectionCredsFromWalletFile": false,
+               "name": "ADMIN.movilsurbd_tpurgent",
+               "color": "none",
+               "currentSchema": "",
+               "addSettingsScopeToConnectionName": false,
+               "addCurrentSchemaToConnectionName": false,
+               "filters": [],
+               "useCompatibleNamesDirectoryPath": true
+          },
+          {
+               "authenticationType": 2,
+               "dBAPrivilege": "None",
+               "userID": "ADMIN",
+               "passwordSaved": true,
+               "dataSource": "labpracticoap4_tpurgent",
+               "connectionType": 1,
+               "tnsAdmin": "c:\\Users\\javie\\OneDrive\\Documentos\\Wallet_LabPracticoAP4",
+               "walletLocation": "c:\\Users\\javie\\OneDrive\\Documentos\\Wallet_LabPracticoAP4",
+               "useConnectionCredsFromWalletFile": false,
+               "name": "ADMIN.labpracticoap4_tpurgent",
+               "color": "none",
+               "currentSchema": "",
+               "addSettingsScopeToConnectionName": false,
+               "addCurrentSchemaToConnectionName": false,
+               "filters": [],
+               "useCompatibleNamesDirectoryPath": true,
+               "passwordStore": "Secret Storage"
+          }
+     ],
+     "rsp-ui.enableStartServerOnActivation": [
+          {
+               "id": "redhat.vscode-community-server-connector",
+               "name": "Community Server Connector",
+               "startOnActivation": true
+          }
+     ],
+     "apc.menubar.compact": true,
+     "workbench.tree.enableStickyScroll": false,
+     "workbench.tree.renderIndentGuides": "always",
+     "workbench.preferredDarkColorTheme": "Dobri Next -C05- Electron",
+     "workbench.view.alwaysShowHeaderActions": true,
+     "workbench.view.showQuietly": {
+          "workbench.panel.output": true
+     },
+     "search.seedOnFocus": true,
+     "javascript.updateImportsOnFileMove.enabled": "always",
+     "vscode_custom_css.imports": [],
+     "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+     "powermode.enabled": true,
+     "powermode.presets": "magic",
+     "editor.cursorSmoothCaretAnimation": "on",
+     "workbench.iconTheme": "material-icon-theme",
+     "animations.CursorAnimation": true,
+     "custom-ui-style.external.imports": [
+          "file:///c:/Users/javie/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+     ],
+     "animations.Active": "Indent",
+     "animations.Command-Palette": "Slide",
+     "[python]": {
+          "editor.defaultFormatter": "ms-python.black-formatter"
+     },
+     "tailwindFormatter.suppressNonJSXWarning": true,
+     "editor.codeActionsOnSave": {},
+     "editor.codeActions.triggerOnFocusChange": true,
+     "[javascriptreact]": {
+          "editor.defaultFormatter": "vscode.typescript-language-features"
+     },
+     "docker.extension.enableComposeLanguageServer": false,
+     "editor.formatOnSave": true,
+     "terminal.integrated.env.linux": {},
+     "chat.instructionsFilesLocations": {
+          ".github/instructions": true,
+          "/tmp/postman-collections-post-response.instructions.md": true,
+          "/tmp/postman-collections-pre-request.instructions.md": true,
+          "/tmp/postman-folder-post-response.instructions.md": true,
+          "/tmp/postman-folder-pre-request.instructions.md": true,
+          "/tmp/postman-http-request-post-response.instructions.md": true,
+          "/tmp/postman-http-request-pre-request.instructions.md": true
+     },
+     "terminal.integrated.sendKeybindingsToShell": true,
+     "editor.fontFamily": "'JetBrains Mono', 'Fira Code', 'Hack', 'monospace'",
+     "cursor.cpp.disabledLanguages": ["plaintext", "markdown", "scminput"],
+     "explorer.confirmDelete": false,
+     "cursor.general.globalCursorIgnoreList": [
+          "**/credentials.json",
+          "**/credentials.*.json",
+          "**/secret.json",
+          "**/secrets.json",
+          "**/*.key",
+          "**/*.pem",
+          "**/*.pfx",
+          "**/*.p12",
+          "**/*.crt",
+          "**/*.cer",
+          "**/id_rsa",
+          "**/id_dsa",
+          "**/.ssh/id_*"
+     ]
 }
