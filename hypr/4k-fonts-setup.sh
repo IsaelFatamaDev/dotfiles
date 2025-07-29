@@ -26,10 +26,10 @@ export MOZ_ENABLE_WAYLAND=1
 export MOZ_USE_XINPUT2=1
 
 # Configuración para Chrome/Chromium
-export CHROME_EXTRA_ARGS="--force-device-scale-factor=1.0"
+export CHROME_EXTRA_ARGS="--force-device-scale-factor=1.0 --high-dpi-support=1 --force-device-scale-factor=1"
 
 # Configuración para VS Code
 export VSCODE_DEV=1
 
 echo "Configuración de fuentes Full HD aplicada"
-echo "Variables de entorno configuradas para calidad óptima en Full HD" 
+echo "Variables de entorno configuradas para calidad óptima en Full HD"

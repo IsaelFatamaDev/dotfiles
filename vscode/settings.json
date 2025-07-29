@@ -236,7 +236,6 @@
      "git.openRepositoryInParentFolders": "never",
      "redhat.telemetry.enabled": true,
      "liveServer.settings.donotShowInfoMsg": true,
-     "window.menuBarVisibility": "compact",
      "editor.defaultColorDecorators": "auto",
      "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
      "editor.inlineSuggest.showToolbar": "always",

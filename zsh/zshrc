@@ -14,3 +14,20 @@ fi
 source "$CONFIG_PATH/zsh/zshrc.alias"
 
 PATH=~/.console-ninja/.bin:$PATH
+export GEMINI_API_KEY=AIzaSyD5yLsbM3w0miChgf7b4zh84T3UonMnMK8
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export JAVA_HOME=/opt/jdk-20.0.2
+export PATH=$JAVA_HOME/bin:$PATH
+alias warp='warp-terminal'
+# Auto-clone to develop script
+source /home/javi_dev/auto_develop_hook.sh
+
+unalias code 2>/dev/null
+
+code() {
+  nohup /opt/vscode/code "$@" >/dev/null 2>&1 &
+  disown
+}
