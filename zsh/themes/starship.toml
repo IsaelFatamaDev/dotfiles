@@ -1,0 +1,40 @@
+# Catppuccin Mocha inspired Starship prompt
+add_newline = true
+format = "\n$directory$git_branch$git_status$nodejs$docker_context$kubernetes$cmd_duration$line_break$character "
+
+[character]
+success_symbol = "[❯](bold lavender)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+
+[directory]
+style = "bold text"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+style = "mauve"
+format = " on [$symbol$branch]($style) "
+
+[git_status]
+style = "yellow"
+format = "([$all_status$ahead_behind]($style) )"
+
+[nodejs]
+format = "via [ $version](@style) "
+style = "green"
+detect_files = ["package.json", ".node-version", "pnpm-lock.yaml", "yarn.lock"]
+
+[docker_context]
+format = "[ $context](@style) "
+style = "sky"
+
+[kubernetes]
+format = "[⎈ $context(::$namespace)](@style) "
+style = "sapphire"
+disabled = false
+
+[cmd_duration]
+format = "took [$duration](@style) "
+style = "peach"
+min_time = 200

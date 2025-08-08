@@ -19,6 +19,15 @@ export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
 export ELECTRON_OZONE_PLATFORM_HINT="wayland"
 
+# Fastfetch on interactive shells (image only in Kitty)
+if [[ $- == *i* ]] && command -v fastfetch &>/dev/null; then
+  if [[ "$TERM" == "xterm-kitty" || -n "$KITTY_WINDOW_ID" ]]; then
+    fastfetch --config "/home/javi_dev/dev/config/dotfiles/fastfetch/config.jsonc" --kitty-direct "/home/javi_dev/dev/config/dotfiles/images/LOGO_FATAMA.png"
+  else
+    fastfetch --config "/home/javi_dev/dev/config/dotfiles/fastfetch/config.jsonc"
+  fi
+fi
+
 # Git Logs
 gitlog () {
   if (( ! $# )); then
@@ -33,6 +42,7 @@ if command -v mise &> /dev/null; then
 fi
 
 if command -v starship &> /dev/null; then
+ export STARSHIP_CONFIG="$HOME/dev/config/dotfiles/zsh/themes/starship.toml"
  eval "$(starship init zsh)"
 fi
 
@@ -49,3 +59,9 @@ if [ -f '/home/luis/dev/google-cloud-sdk/path.zsh.inc' ]; then . '/home/luis/dev
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/luis/dev/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/luis/dev/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Configurar imagen para fastfetch (solo una vez)
+if [[ ! -L ~/Pictures/fastfetch.png ]]; then
+  mkdir -p ~/Pictures
+  ln -sf "/home/javi_dev/dev/config/dotfiles/images/LOGO_FATAMA.png" ~/Pictures/fastfetch.png
+fi

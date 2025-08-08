@@ -1,3 +1,5 @@
+@import "mocha.css";
+
 * {
      /* `otf-font-awesome` and SpaceMono Nerd Font are required to be installed for icons */
      font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial,
@@ -7,23 +9,23 @@
 }
 
 window#waybar {
-     background: rgba(26, 27, 38, 0.85);
-     color: #c0caf5;
+     background: alpha(@base, 0.85);
+     color: @text;
      font-family: SpaceMono Nerd Font, feather;
      transition: background-color 0.5s;
-     border-bottom: 2px solid rgba(179, 147, 209, 0.3);
-     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+     border-bottom: 2px solid alpha(@mauve, 0.3);
+     box-shadow: 0 2px 8px alpha(@crust, 0.6);
 }
 
 .modules-left,
 .modules-center,
 .modules-right {
-     background: rgba(0, 0, 8, 0.8);
+     background: alpha(@crust, 0.8);
      margin: 6px 8px;
      padding: 0 8px;
      border-radius: 18px;
-     border: 1px solid rgba(179, 147, 209, 0.2);
-     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+     border: 1px solid alpha(@mauve, 0.2);
+     box-shadow: 0 2px 4px alpha(@crust, 0.5);
 }
 .modules-left {
      padding: 0;
@@ -74,9 +76,9 @@ window#waybar {
 #power-profiles-daemon:hover,
 #language:hover,
 #mpd:hover {
-     background: rgba(179, 147, 209, 0.2);
-     color: #b4befe;
-     box-shadow: 0 2px 8px rgba(179, 147, 209, 0.3);
+     background: alpha(@mauve, 0.2);
+     color: @lavender;
+     box-shadow: 0 2px 8px alpha(@mauve, 0.3);
 }
 
 #workspaces button {
@@ -84,7 +86,7 @@ window#waybar {
      font-family: SpaceMono Nerd Font, feather;
      font-weight: 900;
      font-size: 13pt;
-     color: #c0caf5;
+     color: @text;
      border: none;
      border-radius: 12px;
      padding: 0 8px;
@@ -93,15 +95,15 @@ window#waybar {
 }
 
 #workspaces button.active {
-     background: rgba(179, 147, 209, 0.3);
-     color: #b4befe;
-     box-shadow: 0 2px 8px rgba(179, 147, 209, 0.4);
+     background: alpha(@mauve, 0.3);
+     color: @lavender;
+     box-shadow: 0 2px 8px alpha(@mauve, 0.4);
 }
 
 #workspaces button:hover {
-     background: rgba(179, 147, 209, 0.15);
-     color: #b4befe;
-     box-shadow: 0 2px 8px rgba(179, 147, 209, 0.3);
+     background: alpha(@mauve, 0.15);
+     color: @lavender;
+     box-shadow: 0 2px 8px alpha(@mauve, 0.3);
 }
 
 #custom-arch {
@@ -111,5 +113,14 @@ window#waybar {
      transition: color 0.5s;
 }
 #custom-arch:hover {
-     color: #1793d1;
+     color: @sapphire;
+}
+
+/* Center title (hyprland/window) */
+#window {
+     padding: 0 12px;
+     color: @text;
+}
+#window.empty {
+     color: alpha(@text, 0.5);
 }

@@ -160,6 +160,17 @@
           "fish": {
                "path": "fish",
                "icon": "terminal-linux"
+          },
+          "tmux": {
+               "path": "tmux",
+               "icon": "terminal-tmux"
+          },
+          "pwsh": {
+               "path": "pwsh",
+               "icon": "terminal-powershell"
+          },
+          "sh (2)": {
+               "path": "/usr/bin/sh"
           }
      },
      "code-runner.runInTerminal": true,
@@ -445,5 +456,7 @@
           "**/id_rsa",
           "**/id_dsa",
           "**/.ssh/id_*"
-     ]
+     ],
+     "terminal.integrated.defaultProfile.linux": "sh (2)",
+     "terminal.explorerKind": "external"
 }
