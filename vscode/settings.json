@@ -458,5 +458,6 @@
           "**/.ssh/id_*"
      ],
      "terminal.integrated.defaultProfile.linux": "sh (2)",
-     "terminal.explorerKind": "external"
+     "terminal.explorerKind": "external",
+     "git.enableSmartCommit": true
 }
