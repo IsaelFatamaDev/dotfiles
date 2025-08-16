@@ -1,27 +1,34 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 42,
-    "spacing": 5,
+    "height": 48,
+    "spacing": 8,
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
     "modules-left": [
         "custom/arch",
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
+        "hyprland/workspaces",
+        "custom/separator",
         "hyprland/window"
     ],
+    "modules-center": [
+        "custom/weather",
+        "clock"
+    ],
     "modules-right": [
+        "tray",
+        "custom/updates",
+        "disk",
+        "memory",
+        "cpu",
+        "custom/gpu",
+        "temperature",
         "idle_inhibitor",
         "pulseaudio",
         "network",
-        "cpu",
-        "memory",
-        "temperature",
         "hyprland/language",
-        "backlight",
-        "battery",
-        "battery#bat2",
-        "clock"
+        "custom/power"
     ],
     "include": [
         "~/.config/waybar/modules.json"

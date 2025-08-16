@@ -1,54 +1,427 @@
 @import "mocha.css";
 
 * {
-     /* `otf-font-awesome` and SpaceMono Nerd Font are required to be installed for icons */
-     font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial,
+     font-family: "JetBrainsMono Nerd Font", "Fira Code", "SF Pro Display",
           sans-serif;
-     font-size: 15px;
-     transition: background-color 0.3s ease-out;
+     font-size: 13px;
+     font-weight: 500;
+     min-height: 0;
 }
 
 window#waybar {
-     background: alpha(@base, 0.85);
+     background: alpha(@base, 0.92);
      color: @text;
-     font-family: SpaceMono Nerd Font, feather;
-     transition: background-color 0.5s;
-     border-bottom: 2px solid alpha(@mauve, 0.3);
-     box-shadow: 0 2px 8px alpha(@crust, 0.6);
+     border-radius: 12px;
+     margin: 6px;
+     padding: 0;
+     border: 1px solid alpha(@surface1, 0.5);
+     box-shadow: 0 4px 20px alpha(@crust, 0.3);
+     transition: all 0.2s ease;
 }
 
+window#waybar.hidden {
+     opacity: 0.2;
+}
+
+/* Contenedores de módulos profesionales */
 .modules-left,
 .modules-center,
 .modules-right {
-     background: alpha(@crust, 0.8);
-     margin: 6px 8px;
-     padding: 0 8px;
-     border-radius: 18px;
-     border: 1px solid alpha(@mauve, 0.2);
-     box-shadow: 0 2px 4px alpha(@crust, 0.5);
-}
-.modules-left {
-     padding: 0;
-}
-.modules-center {
-     padding: 0 10px;
+     background: alpha(@surface0, 0.7);
+     margin: 4px;
+     padding: 2px 8px;
+     border-radius: 10px;
+     border: 1px solid alpha(@surface1, 0.3);
+     box-shadow: 0 2px 8px alpha(@crust, 0.2);
 }
 
-#clock,
-#battery,
+.modules-left {
+     margin-left: 8px;
+     background: alpha(@surface0, 0.8);
+}
+
+.modules-center {
+     background: alpha(@surface0, 0.6);
+}
+
+.modules-right {
+     margin-right: 8px;
+     background: alpha(@surface0, 0.8);
+}
+
+/* Arch Linux Logo - Profesional */
+#custom-arch {
+     color: @sky;
+     font-size: 16px;
+     font-weight: 600;
+     margin: 0 8px;
+     padding: 4px 8px;
+     border-radius: 8px;
+     background: alpha(@sky, 0.15);
+     border: 1px solid alpha(@sky, 0.2);
+     transition: all 0.2s ease;
+}
+
+#custom-arch:hover {
+     background: alpha(@sky, 0.25);
+     color: @sapphire;
+}
+
+/* Workspaces - Diseño profesional con ventanas */
+#workspaces {
+     background: transparent;
+     margin: 0 4px;
+     font-size: 12px;
+}
+
+#workspaces button {
+     padding: 4px 8px;
+     margin: 0 1px;
+     background: alpha(@surface1, 0.5);
+     color: @subtext0;
+     border: 1px solid alpha(@overlay0, 0.2);
+     border-radius: 6px;
+     font-size: 11px;
+     font-weight: 500;
+     transition: all 0.2s ease;
+     min-width: 20px;
+}
+
+#workspaces button:hover {
+     background: alpha(@mauve, 0.2);
+     color: @mauve;
+     border-color: alpha(@mauve, 0.3);
+}
+
+#workspaces button.active {
+     background: alpha(@mauve, 0.3);
+     color: @base;
+     border-color: @mauve;
+     font-weight: 600;
+}
+
+#workspaces button.urgent {
+     background: alpha(@red, 0.3);
+     color: @base;
+     border-color: @red;
+     animation: urgent-pulse 1.5s infinite;
+}
+
+@keyframes urgent-pulse {
+     100% {
+          opacity: 1;
+     }
+     50% {
+          opacity: 0.7;
+     }
+}
+
+/* Separator */
+#custom-separator {
+     color: alpha(@overlay0, 0.4);
+     font-size: 10px;
+     margin: 0 2px;
+}
+
+/* Window title */
+#window {
+     color: @text;
+     font-weight: 500;
+     font-size: 12px;
+     margin: 0 6px;
+     padding: 2px 6px;
+     border-radius: 6px;
+     background: alpha(@surface1, 0.3);
+     border-left: 2px solid @mauve;
+}
+
+/* Clock - Profesional */
+#clock {
+     color: @text;
+     font-weight: 600;
+     font-size: 13px;
+     margin: 0 6px;
+     padding: 4px 8px;
+     background: alpha(@surface1, 0.4);
+     border-radius: 8px;
+     border: 1px solid alpha(@surface2, 0.3);
+     transition: all 0.2s ease;
+}
+
+#clock:hover {
+     background: alpha(@surface1, 0.6);
+     color: @sky;
+}
+
+/* System modules - Profesionales */
 #cpu,
 #memory,
 #disk,
 #temperature,
-#backlight,
 #network,
 #pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
+#language {
+     color: @text;
+     background: alpha(@surface1, 0.3);
+     border-radius: 6px;
+     padding: 2px 6px;
+     margin: 0 1px;
+     border: 1px solid alpha(@surface2, 0.2);
+     font-size: 12px;
+     transition: all 0.2s ease;
+}
+
+#cpu {
+     color: @red;
+}
+#memory {
+     color: @mauve;
+}
+#disk {
+     color: @peach;
+}
+#temperature {
+     color: @yellow;
+}
+#network {
+     color: @sapphire;
+}
+#pulseaudio {
+     color: @teal;
+}
+#language {
+     color: @flamingo;
+}
+
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover,
+#network:hover,
+#pulseaudio:hover,
+#language:hover {
+     background: alpha(@surface1, 0.5);
+}
+
+/* Tray */
+#tray {
+     background: alpha(@surface1, 0.6);
+     padding: 4px 8px;
+     border-radius: 12px;
+     border: 1px solid alpha(@overlay0, 0.3);
+}
+
+#tray > .passive {
+     -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+     -gtk-icon-effect: highlight;
+     background-color: @red;
+}
+
+/* System modules - Cada uno con su color temático */
+#custom-updates {
+     color: @green;
+     background: linear-gradient(45deg, alpha(@green, 0.2), transparent);
+     border-radius: 10px;
+     padding: 4px 8px;
+     margin: 0 2px;
+     border: 1px solid alpha(@green, 0.3);
+}
+
+#disk {
+     color: @peach;
+     background: linear-gradient(45deg, alpha(@peach, 0.2), transparent);
+     border-radius: 10px;
+     padding: 4px 8px;
+     margin: 0 2px;
+     border: 1px solid alpha(@peach, 0.3);
+}
+
+#memory {
+     color: @mauve;
+     background: linear-gradient(45deg, alpha(@mauve, 0.2), transparent);
+     border-radius: 10px;
+     padding: 4px 8px;
+     margin: 0 2px;
+     border: 1px solid alpha(@mauve, 0.3);
+}
+
+#cpu {
+     color: @red;
+     background: linear-gradient(45deg, alpha(@red, 0.2), transparent);
+     border-radius: 10px;
+     padding: 4px 8px;
+     margin: 0 2px;
+     border: 1px solid alpha(@red, 0.3);
+}
+
+#custom-gpu {
+     color: @green;
+     background: linear-gradient(45deg, alpha(@green, 0.2), transparent);
+     border-radius: 10px;
+     padding: 4px 8px;
+     margin: 0 2px;
+     border: 1px solid alpha(@green, 0.3);
+}
+
+#temperature {
+     color: @yellow;
+     background: linear-gradient(45deg, alpha(@yellow, 0.2), transparent);
+     border-radius: 10px;
+     padding: 4px 8px;
+     margin: 0 2px;
+     border: 1px solid alpha(@yellow, 0.3);
+}
+
+#temperature.critical {
+     color: @red;
+     background: linear-gradient(45deg, alpha(@red, 0.4), alpha(@maroon, 0.2));
+     animation: critical-temp 1.5s infinite;
+}
+
+@keyframes critical-temp {
+     100% {
+          opacity: 1;
+     }
+     50% {
+          opacity: 0.7;
+     }
+}
+
+/* Idle inhibitor */
+#idle_inhibitor {
+     color: @lavender;
+     background: linear-gradient(45deg, alpha(@lavender, 0.2), transparent);
+     border-radius: 10px;
+     padding: 4px 8px;
+     margin: 0 2px;
+     border: 1px solid alpha(@lavender, 0.3);
+}
+
+#idle_inhibitor.activated {
+     color: @red;
+     background: linear-gradient(45deg, alpha(@red, 0.3), alpha(@maroon, 0.1));
+}
+
+/* Audio */
+#pulseaudio {
+     color: @teal;
+     background: linear-gradient(45deg, alpha(@teal, 0.2), transparent);
+     border-radius: 10px;
+     padding: 4px 8px;
+     margin: 0 2px;
+     border: 1px solid alpha(@teal, 0.3);
+     transition: all 0.3s ease;
+}
+
+#pulseaudio:hover {
+     background: linear-gradient(45deg, alpha(@teal, 0.4), alpha(@sky, 0.2));
+}
+
+#pulseaudio.muted {
+     color: @surface2;
+     background: linear-gradient(45deg, alpha(@surface2, 0.3), transparent);
+}
+
+/* Network */
+#network {
+     color: @sapphire;
+     background: linear-gradient(45deg, alpha(@sapphire, 0.2), transparent);
+     border-radius: 10px;
+     padding: 4px 8px;
+     margin: 0 2px;
+     border: 1px solid alpha(@sapphire, 0.3);
+}
+
+#network.disconnected {
+     color: @overlay0;
+     background: linear-gradient(45deg, alpha(@overlay0, 0.2), transparent);
+}
+
+/* Language */
+#language {
+     color: @flamingo;
+     background: linear-gradient(45deg, alpha(@flamingo, 0.2), transparent);
+     border-radius: 10px;
+     padding: 4px 8px;
+     margin: 0 2px;
+     border: 1px solid alpha(@flamingo, 0.3);
+}
+
+/* Power button */
+#custom-power {
+     color: @red;
+     font-size: 16px;
+     font-weight: bold;
+     background: linear-gradient(45deg, alpha(@red, 0.3), alpha(@maroon, 0.2));
+     border-radius: 12px;
+     padding: 6px 10px;
+     margin: 0 4px;
+     border: 2px solid alpha(@red, 0.4);
+     transition: all 0.3s ease;
+}
+
+#custom-power:hover {
+     background: linear-gradient(45deg, alpha(@red, 0.5), alpha(@maroon, 0.3));
+
+     box-shadow: 0 0 20px alpha(@red, 0.5);
+}
+
+/* Estados de los módulos */
+.warning {
+     color: @yellow;
+     background: linear-gradient(
+          45deg,
+          alpha(@yellow, 0.3),
+          alpha(@peach, 0.2)
+     );
+}
+
+.critical {
+     color: @red;
+     background: linear-gradient(45deg, alpha(@red, 0.4), alpha(@maroon, 0.2));
+     animation: critical-blink 1s infinite;
+}
+
+@keyframes critical-blink {
+     100% {
+          opacity: 1;
+     }
+     50% {
+          opacity: 0.6;
+     }
+}
+
+/* Hover effects globales */
+#clock,
+#custom-updates,
+#disk,
+#memory,
+#cpu,
+#custom-gpu,
+#temperature,
 #idle_inhibitor,
-#scratchpad,
+#pulseaudio,
+#network,
+#language,
+#custom-power {
+     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+#clock:hover,
+#custom-updates:hover,
+#disk:hover,
+#memory:hover,
+#cpu:hover,
+#custom-gpu:hover,
+#temperature:hover,
+#idle_inhibitor:hover,
+#network:hover,
+#language:hover {
+     box-shadow: 0 4px 15px alpha(@crust, 0.4);
+}
 #power-profiles-daemon,
 #language,
 #mpd {

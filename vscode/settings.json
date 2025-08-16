@@ -459,5 +459,6 @@
      ],
      "terminal.integrated.defaultProfile.linux": "sh (2)",
      "terminal.explorerKind": "external",
-     "git.enableSmartCommit": true
+     "git.enableSmartCommit": true,
+     "geminicodeassist.project": "gen-lang-client-0113374028"
 }

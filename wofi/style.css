@@ -52,84 +52,131 @@
 @define-color crust-rgb  rgb(17, 17, 27);
 
 * {
-     font-family: "CaskaydiaCove Nerd Font", monospace;
+     font-family: "JetBrainsMono Nerd Font", "CaskaydiaCove Nerd Font",
+          monospace;
      font-size: 18px;
+     font-weight: 600;
 }
 
-/* Window */
+/* Ventana principal con efectos glassmorphism */
 window {
      margin: 0px;
-     padding: 10px;
-     border: 2px solid @lavender;
-     border-radius: 12px;
-     background-color: @base;
-     box-shadow: 0 10px 30px alpha(@crust, 0.6);
+     padding: 20px;
+     border: 3px solid transparent;
+     border-image: linear-gradient(135deg, @mauve, @pink, @blue) 1;
+     border-radius: 24px;
+     background: linear-gradient(
+          135deg,
+          alpha(@base, 0.95),
+          alpha(@mantle, 0.9)
+     );
+     box-shadow: 0 20px 60px alpha(@crust, 0.8), 0 8px 32px alpha(@mauve, 0.3),
+          0 2px 0 alpha(@surface2, 0.3) inset;
+     backdrop-filter: blur(24px);
 }
 
-/* Inner Box */
+/* Inner Box más elegante */
 #inner-box {
-     margin: 5px;
-     padding: 10px;
+     margin: 10px;
+     padding: 20px;
      border: none;
-     background-color: @base;
+     background: linear-gradient(
+          135deg,
+          alpha(@surface0, 0.8),
+          alpha(@surface1, 0.6)
+     );
+     border-radius: 20px;
+     box-shadow: 0 4px 16px alpha(@crust, 0.6),
+          0 1px 0 alpha(@surface2, 0.2) inset;
 }
 
 /* Outer Box */
 #outer-box {
-     margin: 5px;
-     padding: 10px;
+     margin: 0px;
+     padding: 0px;
      border: none;
-     background-color: @base;
+     background: transparent;
 }
 
-/* Scroll */
+/* Scroll más elegante */
 #scroll {
      margin: 0px;
-     padding: 10px;
+     padding: 15px;
      border: none;
-     background-color: @base;
+     background: transparent;
 }
 
-/* Input */
+/* Input field más moderno */
 #input {
-      margin: 8px 20px;
-      padding: 12px;
-      border: 2px solid @surface2;
-      border-radius: 10px;
-      color: @text;
-      background-color: @surface0;
+     margin: 12px 24px;
+     padding: 16px 20px;
+     border: 2px solid @surface2;
+     border-radius: 16px;
+     color: @text;
+     background: linear-gradient(
+          135deg,
+          alpha(@surface0, 0.9),
+          alpha(@surface1, 0.7)
+     );
+     font-size: 18px;
+     font-weight: 600;
+     box-shadow: 0 4px 16px alpha(@crust, 0.4),
+          0 1px 0 alpha(@surface2, 0.3) inset;
+     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #input image {
      border: none;
-     color: @red;
+     color: @mauve;
+     margin-right: 12px;
 }
 
 #input:focus {
-     border: 2px solid @lavender;
-     box-shadow: 0 0 0 2px alpha(@lavender, 0.2);
+     border: 2px solid @mauve;
+     background: linear-gradient(
+          135deg,
+          alpha(@surface1, 0.9),
+          alpha(@surface0, 0.8)
+     );
+     box-shadow: 0 8px 25px alpha(@mauve, 0.4), 0 4px 12px alpha(@pink, 0.2),
+          0 1px 0 alpha(@lavender, 0.3) inset;
+     color: @lavender;
 }
 
-/* Text */
+/* Text más legible */
 #text {
-  margin: 5px;
-  border: none;
-  color: @text;
-  line-height: 1.3;
+     margin: 8px;
+     border: none;
+     color: @text;
+     line-height: 1.4;
+     font-weight: 600;
 }
 
+/* Entradas más chéveres */
 #entry {
-     background-color: @mantle;
-     margin: 6px 8px;
-     padding: 10px 14px;
-     border-radius: 10px;
-     border: 1px solid alpha(@surface2, 0.5);
-     transition: background-color 0.15s ease, border-color 0.15s ease;
+     background: linear-gradient(
+          135deg,
+          alpha(@mantle, 0.9),
+          alpha(@surface0, 0.7)
+     );
+     margin: 8px 12px;
+     padding: 14px 18px;
+     border-radius: 16px;
+     border: 1px solid alpha(@surface2, 0.4);
+     box-shadow: 0 4px 12px alpha(@crust, 0.5),
+          0 1px 0 alpha(@surface2, 0.2) inset;
+     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #entry:hover {
-     background-color: alpha(@surface1, 0.6);
-     border-color: @surface2;
+     background: linear-gradient(
+          135deg,
+          alpha(@surface1, 0.9),
+          alpha(@surface0, 0.8)
+     );
+     border: 1px solid alpha(@mauve, 0.5);
+     box-shadow: 0 6px 18px alpha(@mauve, 0.3), 0 2px 8px alpha(@blue, 0.2);
+     transform: translateX(2px);
 }
 
 #entry arrow {
@@ -138,20 +185,25 @@ window {
 }
 
 #entry image {
-     margin-right: 10px;
+     margin-right: 12px;
+     border-radius: 8px;
 }
 
-/* Selected Entry */
+/* Selected Entry más épico */
 #entry:selected {
-     background-color: alpha(@lavender, 0.12);
-     border: 1px solid @lavender;
+     background: linear-gradient(135deg, @mauve, @pink);
+     color: @crust;
+     border: 1px solid alpha(@lavender, 0.8);
+     box-shadow: 0 8px 25px alpha(@mauve, 0.6), 0 4px 12px alpha(@pink, 0.3),
+          0 1px 0 alpha(@lavender, 0.4) inset;
+     transform: translateX(4px) scale(1.02);
 }
 
 #entry:selected #text {
-     color: @text;
-     font-weight: 600;
+     color: @crust;
+     font-weight: 700;
 }
 
 #entry:drop(active) {
-     background-color: @lavender!important;
+     background: @lavender !important;
 }
