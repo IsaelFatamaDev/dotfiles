@@ -3,14 +3,17 @@
     "position": "top",
     "height": 48,
     "spacing": 8,
-    "margin-top": 5,
-    "margin-left": 10,
-    "margin-right": 10,
+    "exclusive": true,
+    "fixed-center": true,
+    "gtk-layer-shell": true,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
     "modules-left": [
         "custom/arch",
         "hyprland/workspaces",
         "custom/separator",
-        "hyprland/window"
+        "custom/window"
     ],
     "modules-center": [
         "custom/weather",

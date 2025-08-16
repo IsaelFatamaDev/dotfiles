@@ -1,5 +1,9 @@
 @import "mocha.css";
 
+/* =============================================================================
+   WAYBAR PROFESSIONAL THEME
+   ============================================================================= */
+
 * {
      font-family: "JetBrainsMono Nerd Font", "Fira Code", "SF Pro Display",
           sans-serif;
@@ -49,166 +53,147 @@ window#waybar.hidden {
      background: alpha(@surface0, 0.8);
 }
 
-/* Arch Linux Logo - Profesional */
-#custom-arch {
-     color: @sky;
-     font-size: 16px;
-     font-weight: 600;
-     margin: 0 8px;
-     padding: 4px 8px;
-     border-radius: 8px;
-     background: alpha(@sky, 0.15);
-     border: 1px solid alpha(@sky, 0.2);
-     transition: all 0.2s ease;
-}
-
-#custom-arch:hover {
-     background: alpha(@sky, 0.25);
-     color: @sapphire;
-}
-
-/* Workspaces - Diseño profesional con ventanas */
+/* Módulos específicos */
 #workspaces {
      background: transparent;
-     margin: 0 4px;
-     font-size: 12px;
+     margin: 0 5px;
 }
 
 #workspaces button {
-     padding: 4px 8px;
-     margin: 0 1px;
-     background: alpha(@surface1, 0.5);
-     color: @subtext0;
-     border: 1px solid alpha(@overlay0, 0.2);
+     padding: 2px 8px;
+     margin: 2px;
+     background: alpha(@surface1, 0.8);
+     color: @text;
+     border: none;
      border-radius: 6px;
-     font-size: 11px;
-     font-weight: 500;
      transition: all 0.2s ease;
-     min-width: 20px;
-}
-
-#workspaces button:hover {
-     background: alpha(@mauve, 0.2);
-     color: @mauve;
-     border-color: alpha(@mauve, 0.3);
 }
 
 #workspaces button.active {
-     background: alpha(@mauve, 0.3);
+     background: @mauve;
      color: @base;
-     border-color: @mauve;
-     font-weight: 600;
+     font-weight: bold;
+}
+
+#workspaces button:hover {
+     background: alpha(@overlay0, 0.8);
 }
 
 #workspaces button.urgent {
-     background: alpha(@red, 0.3);
+     background: @red;
      color: @base;
-     border-color: @red;
-     animation: urgent-pulse 1.5s infinite;
+     animation: blink 1s linear infinite;
 }
 
-@keyframes urgent-pulse {
-     100% {
-          opacity: 1;
-     }
+@keyframes blink {
      50% {
-          opacity: 0.7;
+          opacity: 0.5;
      }
 }
 
-/* Separator */
-#custom-separator {
-     color: alpha(@overlay0, 0.4);
-     font-size: 10px;
-     margin: 0 2px;
-}
-
-/* Window title */
-#window {
-     color: @text;
-     font-weight: 500;
-     font-size: 12px;
-     margin: 0 6px;
-     padding: 2px 6px;
-     border-radius: 6px;
-     background: alpha(@surface1, 0.3);
-     border-left: 2px solid @mauve;
-}
-
-/* Clock - Profesional */
-#clock {
-     color: @text;
-     font-weight: 600;
-     font-size: 13px;
-     margin: 0 6px;
-     padding: 4px 8px;
-     background: alpha(@surface1, 0.4);
-     border-radius: 8px;
-     border: 1px solid alpha(@surface2, 0.3);
-     transition: all 0.2s ease;
-}
-
-#clock:hover {
-     background: alpha(@surface1, 0.6);
-     color: @sky;
-}
-
-/* System modules - Profesionales */
+/* Módulos individuales */
+#custom-arch,
+#clock,
 #cpu,
 #memory,
 #disk,
 #temperature,
+#custom-gpu,
 #network,
 #pulseaudio,
+#custom-updates,
+#custom-power,
+#tray,
+#idle_inhibitor,
+#custom-weather,
 #language {
+     padding: 4px 12px;
+     margin: 2px;
+     background: alpha(@surface1, 0.6);
      color: @text;
-     background: alpha(@surface1, 0.3);
-     border-radius: 6px;
-     padding: 2px 6px;
-     margin: 0 1px;
-     border: 1px solid alpha(@surface2, 0.2);
-     font-size: 12px;
+     border-radius: 8px;
+     border: 1px solid alpha(@overlay0, 0.3);
      transition: all 0.2s ease;
 }
 
-#cpu {
-     color: @red;
-}
-#memory {
-     color: @mauve;
-}
-#disk {
-     color: @peach;
-}
-#temperature {
-     color: @yellow;
-}
-#network {
-     color: @sapphire;
-}
-#pulseaudio {
-     color: @teal;
-}
-#language {
-     color: @flamingo;
-}
-
+#custom-arch:hover,
+#clock:hover,
 #cpu:hover,
 #memory:hover,
 #disk:hover,
 #temperature:hover,
+#custom-gpu:hover,
 #network:hover,
 #pulseaudio:hover,
+#custom-updates:hover,
+#custom-power:hover,
+#idle_inhibitor:hover,
+#custom-weather:hover,
 #language:hover {
-     background: alpha(@surface1, 0.5);
+     background: alpha(@overlay1, 0.8);
+     box-shadow: 0 2px 8px alpha(@crust, 0.4);
 }
 
-/* Tray */
+/* Módulo de ventana personalizado */
+#custom-window {
+     padding: 4px 12px;
+     margin: 2px;
+     background: alpha(@surface2, 0.6);
+     color: @lavender;
+     border-radius: 8px;
+     font-style: italic;
+     transition: all 0.3s ease;
+     min-width: 1px;
+}
+
+/* Módulo de ventana original */
+#window {
+     padding: 4px 12px;
+     margin: 2px;
+     background: alpha(@surface2, 0.6);
+     color: @lavender;
+     border-radius: 8px;
+     font-style: italic;
+     transition: all 0.3s ease;
+}
+
+/* Ocultar ventana cuando está vacía */
+#window.empty,
+#custom-window.empty {
+     min-width: 0;
+     padding: 0;
+     margin: 0;
+     border: none;
+     background: transparent;
+     opacity: 0;
+}
+
+/* Separador */
+#custom-separator {
+     color: alpha(@overlay0, 0.5);
+     margin: 0 5px;
+     font-weight: bold;
+}
+
+/* Estados de colores para métricas */
+#cpu.warning,
+#memory.warning {
+     background: @yellow;
+     color: @base;
+}
+
+#cpu.critical,
+#memory.critical,
+#temperature.critical {
+     background: @red;
+     color: @base;
+     animation: blink 1s linear infinite;
+}
+
+/* Tray específico */
 #tray {
-     background: alpha(@surface1, 0.6);
-     padding: 4px 8px;
-     border-radius: 12px;
-     border: 1px solid alpha(@overlay0, 0.3);
+     background: alpha(@surface0, 0.8);
+     padding: 2px 8px;
 }
 
 #tray > .passive {
@@ -217,283 +202,43 @@ window#waybar.hidden {
 
 #tray > .needs-attention {
      -gtk-icon-effect: highlight;
-     background-color: @red;
+     background: @yellow;
+     border-radius: 50%;
 }
 
-/* System modules - Cada uno con su color temático */
-#custom-updates {
-     color: @green;
-     background: linear-gradient(45deg, alpha(@green, 0.2), transparent);
-     border-radius: 10px;
-     padding: 4px 8px;
-     margin: 0 2px;
-     border: 1px solid alpha(@green, 0.3);
-}
-
-#disk {
-     color: @peach;
-     background: linear-gradient(45deg, alpha(@peach, 0.2), transparent);
-     border-radius: 10px;
-     padding: 4px 8px;
-     margin: 0 2px;
-     border: 1px solid alpha(@peach, 0.3);
-}
-
-#memory {
-     color: @mauve;
-     background: linear-gradient(45deg, alpha(@mauve, 0.2), transparent);
-     border-radius: 10px;
-     padding: 4px 8px;
-     margin: 0 2px;
-     border: 1px solid alpha(@mauve, 0.3);
-}
-
-#cpu {
-     color: @red;
-     background: linear-gradient(45deg, alpha(@red, 0.2), transparent);
-     border-radius: 10px;
-     padding: 4px 8px;
-     margin: 0 2px;
-     border: 1px solid alpha(@red, 0.3);
-}
-
-#custom-gpu {
-     color: @green;
-     background: linear-gradient(45deg, alpha(@green, 0.2), transparent);
-     border-radius: 10px;
-     padding: 4px 8px;
-     margin: 0 2px;
-     border: 1px solid alpha(@green, 0.3);
-}
-
-#temperature {
-     color: @yellow;
-     background: linear-gradient(45deg, alpha(@yellow, 0.2), transparent);
-     border-radius: 10px;
-     padding: 4px 8px;
-     margin: 0 2px;
-     border: 1px solid alpha(@yellow, 0.3);
-}
-
-#temperature.critical {
-     color: @red;
-     background: linear-gradient(45deg, alpha(@red, 0.4), alpha(@maroon, 0.2));
-     animation: critical-temp 1.5s infinite;
-}
-
-@keyframes critical-temp {
-     100% {
-          opacity: 1;
-     }
-     50% {
-          opacity: 0.7;
-     }
-}
-
-/* Idle inhibitor */
-#idle_inhibitor {
-     color: @lavender;
-     background: linear-gradient(45deg, alpha(@lavender, 0.2), transparent);
-     border-radius: 10px;
-     padding: 4px 8px;
-     margin: 0 2px;
-     border: 1px solid alpha(@lavender, 0.3);
-}
-
-#idle_inhibitor.activated {
-     color: @red;
-     background: linear-gradient(45deg, alpha(@red, 0.3), alpha(@maroon, 0.1));
-}
-
-/* Audio */
-#pulseaudio {
-     color: @teal;
-     background: linear-gradient(45deg, alpha(@teal, 0.2), transparent);
-     border-radius: 10px;
-     padding: 4px 8px;
-     margin: 0 2px;
-     border: 1px solid alpha(@teal, 0.3);
-     transition: all 0.3s ease;
-}
-
-#pulseaudio:hover {
-     background: linear-gradient(45deg, alpha(@teal, 0.4), alpha(@sky, 0.2));
-}
-
+/* Pulseaudio específico */
 #pulseaudio.muted {
-     color: @surface2;
-     background: linear-gradient(45deg, alpha(@surface2, 0.3), transparent);
+     background: alpha(@overlay0, 0.6);
+     color: @subtext0;
 }
 
-/* Network */
-#network {
-     color: @sapphire;
-     background: linear-gradient(45deg, alpha(@sapphire, 0.2), transparent);
-     border-radius: 10px;
-     padding: 4px 8px;
-     margin: 0 2px;
-     border: 1px solid alpha(@sapphire, 0.3);
-}
-
+/* Red específica */
 #network.disconnected {
-     color: @overlay0;
-     background: linear-gradient(45deg, alpha(@overlay0, 0.2), transparent);
+     background: @red;
+     color: @base;
 }
 
-/* Language */
-#language {
-     color: @flamingo;
-     background: linear-gradient(45deg, alpha(@flamingo, 0.2), transparent);
-     border-radius: 10px;
-     padding: 4px 8px;
-     margin: 0 2px;
-     border: 1px solid alpha(@flamingo, 0.3);
+#network.linked,
+#network.wifi {
+     background: @green;
+     color: @base;
 }
 
-/* Power button */
-#custom-power {
-     color: @red;
-     font-size: 16px;
+/* Reloj destacado */
+#clock {
+     background: alpha(@blue, 0.8);
+     color: @base;
      font-weight: bold;
-     background: linear-gradient(45deg, alpha(@red, 0.3), alpha(@maroon, 0.2));
-     border-radius: 12px;
-     padding: 6px 10px;
-     margin: 0 4px;
-     border: 2px solid alpha(@red, 0.4);
-     transition: all 0.3s ease;
+     font-size: 14px;
+}
+
+/* Poder/Power button */
+#custom-power {
+     background: @red;
+     color: @base;
+     font-weight: bold;
 }
 
 #custom-power:hover {
-     background: linear-gradient(45deg, alpha(@red, 0.5), alpha(@maroon, 0.3));
-
-     box-shadow: 0 0 20px alpha(@red, 0.5);
-}
-
-/* Estados de los módulos */
-.warning {
-     color: @yellow;
-     background: linear-gradient(
-          45deg,
-          alpha(@yellow, 0.3),
-          alpha(@peach, 0.2)
-     );
-}
-
-.critical {
-     color: @red;
-     background: linear-gradient(45deg, alpha(@red, 0.4), alpha(@maroon, 0.2));
-     animation: critical-blink 1s infinite;
-}
-
-@keyframes critical-blink {
-     100% {
-          opacity: 1;
-     }
-     50% {
-          opacity: 0.6;
-     }
-}
-
-/* Hover effects globales */
-#clock,
-#custom-updates,
-#disk,
-#memory,
-#cpu,
-#custom-gpu,
-#temperature,
-#idle_inhibitor,
-#pulseaudio,
-#network,
-#language,
-#custom-power {
-     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-#clock:hover,
-#custom-updates:hover,
-#disk:hover,
-#memory:hover,
-#cpu:hover,
-#custom-gpu:hover,
-#temperature:hover,
-#idle_inhibitor:hover,
-#network:hover,
-#language:hover {
-     box-shadow: 0 4px 15px alpha(@crust, 0.4);
-}
-#power-profiles-daemon,
-#language,
-#mpd {
-     padding: 0 8px;
-     border-radius: 12px;
-     margin: 0 2px;
-     transition: all 0.3s ease;
-}
-
-#clock:hover,
-#battery:hover,
-#cpu:hover,
-#memory:hover,
-#disk:hover,
-#temperature:hover,
-#backlight:hover,
-#network:hover,
-#pulseaudio:hover,
-#wireplumber:hover,
-#custom-media:hover,
-#tray:hover,
-#mode:hover,
-#idle_inhibitor:hover,
-#scratchpad:hover,
-#power-profiles-daemon:hover,
-#language:hover,
-#mpd:hover {
-     background: alpha(@mauve, 0.2);
-     color: @lavender;
-     box-shadow: 0 2px 8px alpha(@mauve, 0.3);
-}
-
-#workspaces button {
-     background: transparent;
-     font-family: SpaceMono Nerd Font, feather;
-     font-weight: 900;
-     font-size: 13pt;
-     color: @text;
-     border: none;
-     border-radius: 12px;
-     padding: 0 8px;
-     margin: 0 2px;
-     transition: all 0.3s ease;
-}
-
-#workspaces button.active {
-     background: alpha(@mauve, 0.3);
-     color: @lavender;
-     box-shadow: 0 2px 8px alpha(@mauve, 0.4);
-}
-
-#workspaces button:hover {
-     background: alpha(@mauve, 0.15);
-     color: @lavender;
-     box-shadow: 0 2px 8px alpha(@mauve, 0.3);
-}
-
-#custom-arch {
-     margin-left: 5px;
-     padding: 0 10px;
-     font-size: 25px;
-     transition: color 0.5s;
-}
-#custom-arch:hover {
-     color: @sapphire;
-}
-
-/* Center title (hyprland/window) */
-#window {
-     padding: 0 12px;
-     color: @text;
-}
-#window.empty {
-     color: alpha(@text, 0.5);
+     background: @maroon;
 }
