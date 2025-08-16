@@ -1,209 +1,375 @@
-@define-color rosewater  #f5e0dc;
-@define-color rosewater-rgb  rgb(245, 224, 220);
-@define-color flamingo  #f2cdcd;
-@define-color flamingo-rgb  rgb(242, 205, 205);
-@define-color pink  #f5c2e7;
-@define-color pink-rgb  rgb(245, 194, 231);
-@define-color mauve  #cba6f7;
-@define-color mauve-rgb  rgb(203, 166, 247);
-@define-color red  #f38ba8;
-@define-color red-rgb  rgb(243, 139, 168);
-@define-color maroon  #eba0ac;
-@define-color maroon-rgb  rgb(235, 160, 172);
-@define-color peach  #fab387;
-@define-color peach-rgb  rgb(250, 179, 135);
-@define-color yellow  #f9e2af;
-@define-color yellow-rgb  rgb(249, 226, 175);
-@define-color green  #a6e3a1;
-@define-color green-rgb  rgb(166, 227, 161);
-@define-color teal  #94e2d5;
-@define-color teal-rgb  rgb(148, 226, 213);
-@define-color sky  #89dceb;
-@define-color sky-rgb  rgb(137, 220, 235);
-@define-color sapphire  #74c7ec;
-@define-color sapphire-rgb  rgb(116, 199, 236);
-@define-color blue  #89b4fa;
-@define-color blue-rgb  rgb(137, 180, 250);
-@define-color lavender  #b4befe;
-@define-color lavender-rgb  rgb(180, 190, 254);
-@define-color text  #cdd6f4;
-@define-color text-rgb  rgb(205, 214, 244);
-@define-color subtext1  #bac2de;
-@define-color subtext1-rgb  rgb(186, 194, 222);
-@define-color subtext0  #a6adc8;
-@define-color subtext0-rgb  rgb(166, 173, 200);
-@define-color overlay2  #9399b2;
-@define-color overlay2-rgb  rgb(147, 153, 178);
-@define-color overlay1  #7f849c;
-@define-color overlay1-rgb  rgb(127, 132, 156);
-@define-color overlay0  #6c7086;
-@define-color overlay0-rgb  rgb(108, 112, 134);
-@define-color surface2  #585b70;
-@define-color surface2-rgb  rgb(88, 91, 112);
-@define-color surface1  #45475a;
-@define-color surface1-rgb  rgb(69, 71, 90);
-@define-color surface0  #313244;
-@define-color surface0-rgb  rgb(49, 50, 68);
-@define-color base  #1e1e2e;
-@define-color base-rgb  rgb(30, 30, 46);
-@define-color mantle  #181825;
-@define-color mantle-rgb  rgb(24, 24, 37);
-@define-color crust  #11111b;
-@define-color crust-rgb  rgb(17, 17, 27);
+/* =============================================================================
+   WOFI PROFESSIONAL THEME - CATPPUCCIN MOCHA ENHANCED
+   Author: Professional UI Design
+   Version: 2.0
+   Description: Modern, elegant and professional Wofi theme with glassmorphism
+   ============================================================================= */
+
+/* Color Palette - Catppuccin Mocha with Professional Enhancements */
+@define-color primary-bg      #0f0f23;
+@define-color secondary-bg    #1a1a2e;
+@define-color tertiary-bg     #16213e;
+@define-color accent-secondary #7aa2f7;
+@define-color accent-tertiary #9ece6a;
+@define-color accent-warn     #ff9e64;
+@define-color accent-error    #f7768e;
+
+@define-color text-primary    #c0caf5;
+@define-color text-secondary  #9aa5ce;
+@define-color text-tertiary   #565f89;
+@define-color text-inverse    #1a1b26;
+@define-color text-muted      #545c7e;
+
+@define-color border-primary  #414868;
+@define-color border-secondary #32344a;
+@define-color border-accent   #bb9af7;
+@define-color border-focus    #7aa2f7;
+
+@define-color surface-elevated #24283b;
+@define-color surface-overlay  #292e42;
+@define-color surface-card     #1f2335;
+
+/* Glass Effect Colors */
+@define-color glass-bg        rgba(15, 15, 35, 0.85);
+@define-color glass-border    rgba(187, 154, 247, 0.3);
+@define-color glass-shadow    rgba(0, 0, 0, 0.6);
+
+/* Animation Variables */
+@define-color transition-fast   0.2s;
+@define-color transition-normal 0.3s;
+@define-color transition-slow   0.5s;
+
+/* =============================================================================
+   GLOBAL STYLES & TYPOGRAPHY
+   ============================================================================= */
 
 * {
-     font-family: "JetBrainsMono Nerd Font", "CaskaydiaCove Nerd Font",
-          monospace;
-     font-size: 18px;
-     font-weight: 600;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: "SF Pro Display", "Inter", "Segoe UI Variable",
+          "JetBrains Mono", "Cascadia Code", "Fira Code", system-ui, sans-serif;
+     font-size: 16px;
+     font-weight: 500;
+     line-height: 1.5;
+     letter-spacing: -0.01em;
+     text-rendering: optimizeLegibility;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ventana principal con efectos glassmorphism */
+/* =============================================================================
+   MAIN WINDOW - PROFESSIONAL GLASSMORPHISM DESIGN
+   ============================================================================= */
+
 window {
-     margin: 0px;
-     padding: 20px;
-     border: 3px solid transparent;
-     border-image: linear-gradient(135deg, @mauve, @pink, @blue) 1;
-     border-radius: 24px;
-     background: linear-gradient(
-          135deg,
-          alpha(@base, 0.95),
-          alpha(@mantle, 0.9)
-     );
-     box-shadow: 0 20px 60px alpha(@crust, 0.8), 0 8px 32px alpha(@mauve, 0.3),
-          0 2px 0 alpha(@surface2, 0.3) inset;
-     backdrop-filter: blur(24px);
-}
-
-/* Inner Box más elegante */
-#inner-box {
-     margin: 10px;
-     padding: 20px;
-     border: none;
-     background: linear-gradient(
-          135deg,
-          alpha(@surface0, 0.8),
-          alpha(@surface1, 0.6)
-     );
+     margin: 0;
+     padding: 24px;
+     border: 1px solid @glass-border;
      border-radius: 20px;
-     box-shadow: 0 4px 16px alpha(@crust, 0.6),
-          0 1px 0 alpha(@surface2, 0.2) inset;
+     background: linear-gradient(145deg, @glass-bg, rgba(26, 26, 46, 0.9));
+     box-shadow: 0 32px 64px @glass-shadow, 0 16px 32px rgba(187, 154, 247, 0.1),
+          0 8px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+     backdrop-filter: blur(32px) saturate(1.2);
+     -webkit-backdrop-filter: blur(32px) saturate(1.2);
+     animation: slideInFromTop 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Outer Box */
+@keyframes slideInFromTop {
+     from {
+          opacity: 0;
+          transform: translateY(-20px) scale(0.95);
+     }
+     to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+     }
+}
+
+/* =============================================================================
+   LAYOUT CONTAINERS
+   ============================================================================= */
+
 #outer-box {
-     margin: 0px;
-     padding: 0px;
+     margin: 0;
+     padding: 0;
      border: none;
      background: transparent;
 }
 
-/* Scroll más elegante */
-#scroll {
-     margin: 0px;
-     padding: 15px;
+#inner-box {
+     margin: 8px;
+     padding: 16px;
      border: none;
-     background: transparent;
-}
-
-/* Input field más moderno */
-#input {
-     margin: 12px 24px;
-     padding: 16px 20px;
-     border: 2px solid @surface2;
-     border-radius: 16px;
-     color: @text;
      background: linear-gradient(
           135deg,
-          alpha(@surface0, 0.9),
-          alpha(@surface1, 0.7)
+          rgba(36, 40, 59, 0.6),
+          rgba(31, 35, 53, 0.4)
      );
-     font-size: 18px;
+     border-radius: 16px;
+     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05),
+          0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+#scroll {
+     margin: 0;
+     padding: 12px;
+     border: none;
+     background: transparent;
+}
+
+/* =============================================================================
+   SEARCH INPUT - MODERN & ELEGANT
+   ============================================================================= */
+
+#input {
+     all: unset;
+     margin: 16px 20px 20px 20px;
+     padding: 18px 24px;
+     border: 2px solid @border-secondary;
+     border-radius: 14px;
+     color: @text-primary;
+     background: linear-gradient(
+          135deg,
+          rgba(36, 40, 59, 0.8),
+          rgba(31, 35, 53, 0.6)
+     );
+     font-size: 17px;
      font-weight: 600;
-     box-shadow: 0 4px 16px alpha(@crust, 0.4),
-          0 1px 0 alpha(@surface2, 0.3) inset;
+     letter-spacing: -0.02em;
+     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.2);
      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+     placeholder-color: @text-muted;
 }
 
 #input image {
      border: none;
-     color: @mauve;
-     margin-right: 12px;
+     color: @accent-primary;
+     margin-right: 16px;
+     opacity: 0.8;
+     transition: opacity 0.2s ease;
 }
 
 #input:focus {
-     border: 2px solid @mauve;
+     border: 2px solid @border-focus;
      background: linear-gradient(
           135deg,
-          alpha(@surface1, 0.9),
-          alpha(@surface0, 0.8)
+          rgba(41, 46, 66, 0.9),
+          rgba(36, 40, 59, 0.7)
      );
-     box-shadow: 0 8px 25px alpha(@mauve, 0.4), 0 4px 12px alpha(@pink, 0.2),
-          0 1px 0 alpha(@lavender, 0.3) inset;
-     color: @lavender;
+     box-shadow: 0 12px 32px rgba(122, 162, 247, 0.25),
+          0 8px 16px rgba(187, 154, 247, 0.15),
+          inset 0 1px 0 rgba(122, 162, 247, 0.2),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+     color: @text-primary;
+     transform: translateY(-1px);
 }
 
-/* Text más legible */
+#input:focus image {
+     opacity: 1;
+     color: @border-focus;
+}
+
+/* =============================================================================
+   TEXT STYLING
+   ============================================================================= */
+
 #text {
-     margin: 8px;
+     margin: 6px 0;
      border: none;
-     color: @text;
+     color: @text-primary;
+     font-size: 16px;
+     font-weight: 500;
      line-height: 1.4;
-     font-weight: 600;
+     letter-spacing: -0.01em;
 }
 
-/* Entradas más chéveres */
+/* =============================================================================
+   ENTRY ITEMS - SOPHISTICATED DESIGN
+   ============================================================================= */
+
 #entry {
+     all: unset;
      background: linear-gradient(
           135deg,
-          alpha(@mantle, 0.9),
-          alpha(@surface0, 0.7)
+          rgba(26, 26, 46, 0.6),
+          rgba(31, 35, 53, 0.4)
      );
-     margin: 8px 12px;
-     padding: 14px 18px;
-     border-radius: 16px;
-     border: 1px solid alpha(@surface2, 0.4);
-     box-shadow: 0 4px 12px alpha(@crust, 0.5),
-          0 1px 0 alpha(@surface2, 0.2) inset;
-     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+     margin: 6px 8px;
+     padding: 16px 20px;
+     border-radius: 12px;
+     border: 1px solid rgba(65, 72, 104, 0.3);
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.03);
+     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+     cursor: pointer;
+     position: relative;
+     overflow: hidden;
+}
+
+#entry::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: -100%;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(187, 154, 247, 0.1),
+          transparent
+     );
+     transition: left 0.5s ease;
 }
 
 #entry:hover {
      background: linear-gradient(
           135deg,
-          alpha(@surface1, 0.9),
-          alpha(@surface0, 0.8)
+          rgba(36, 40, 59, 0.8),
+          rgba(41, 46, 66, 0.6)
      );
-     border: 1px solid alpha(@mauve, 0.5);
-     box-shadow: 0 6px 18px alpha(@mauve, 0.3), 0 2px 8px alpha(@blue, 0.2);
-     transform: translateX(2px);
+     border: 1px solid rgba(187, 154, 247, 0.4);
+     box-shadow: 0 8px 24px rgba(187, 154, 247, 0.15),
+          0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+     transform: translateX(4px) translateY(-2px);
+}
+
+#entry:hover::before {
+     left: 100%;
 }
 
 #entry arrow {
      border: none;
-     color: @lavender;
+     color: @accent-secondary;
+     opacity: 0.7;
+     transition: all 0.2s ease;
+}
+
+#entry:hover arrow {
+     opacity: 1;
+     color: @accent-primary;
 }
 
 #entry image {
-     margin-right: 12px;
+     margin-right: 16px;
      border-radius: 8px;
+     opacity: 0.9;
+     transition: opacity 0.2s ease;
 }
 
-/* Selected Entry más épico */
+#entry:hover image {
+     opacity: 1;
+}
+
+/* =============================================================================
+   SELECTED ENTRY - PREMIUM HIGHLIGHTING
+   ============================================================================= */
+
 #entry:selected {
-     background: linear-gradient(135deg, @mauve, @pink);
-     color: @crust;
-     border: 1px solid alpha(@lavender, 0.8);
-     box-shadow: 0 8px 25px alpha(@mauve, 0.6), 0 4px 12px alpha(@pink, 0.3),
-          0 1px 0 alpha(@lavender, 0.4) inset;
-     transform: translateX(4px) scale(1.02);
+     background: linear-gradient(135deg, @accent-primary, @accent-secondary);
+     color: @text-inverse;
+     border: 1px solid rgba(255, 255, 255, 0.2);
+     box-shadow: 0 12px 32px rgba(187, 154, 247, 0.4),
+          0 8px 16px rgba(122, 162, 247, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+     transform: translateX(6px) translateY(-3px) scale(1.02);
+     animation: selectedPulse 2s ease-in-out infinite;
+}
+
+@keyframes selectedPulse {
+     0%,
+     100% {
+          box-shadow: 0 12px 32px rgba(187, 154, 247, 0.4),
+               0 8px 16px rgba(122, 162, 247, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2),
+               inset 0 1px 0 rgba(255, 255, 255, 0.3);
+     }
+     50% {
+          box-shadow: 0 16px 40px rgba(187, 154, 247, 0.5),
+               0 12px 24px rgba(122, 162, 247, 0.4),
+               0 6px 12px rgba(0, 0, 0, 0.3),
+               inset 0 1px 0 rgba(255, 255, 255, 0.4);
+     }
 }
 
 #entry:selected #text {
-     color: @crust;
-     font-weight: 700;
+     color: @text-inverse;
+     font-weight: 600;
+     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-#entry:drop(active) {
-     background: @lavender !important;
+#entry:selected arrow {
+     color: @text-inverse;
+     opacity: 1;
 }
+
+#entry:selected image {
+     opacity: 1;
+     filter: brightness(1.1) contrast(1.1);
+}
+
+/* =============================================================================
+   DRAG & DROP STATES
+   ============================================================================= */
+
+#entry:drop(active) {
+     background: linear-gradient(
+          135deg,
+          @accent-tertiary,
+          rgba(154, 206, 106, 0.8)
+     ) !important;
+     border: 1px solid rgba(255, 255, 255, 0.3) !important;
+     box-shadow: 0 12px 32px rgba(154, 206, 106, 0.4),
+          0 8px 16px rgba(154, 206, 106, 0.2) !important;
+}
+
+/* =============================================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================================= */
+
+@media (max-width: 800px) {
+     window {
+          padding: 16px;
+          border-radius: 16px;
+     }
+
+     #input {
+          margin: 12px 16px 16px 16px;
+          padding: 14px 18px;
+          font-size: 16px;
+     }
+
+     #entry {
+          padding: 12px 16px;
+     }
+}
+
+/* =============================================================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+     * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+     }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+     #entry {
+          border: 2px solid @border-primary;
+     }
+
+     #entry:selected {
+          border: 2px solid @text-inverse;
+     }
+}
+
+/* =============================================================================
+   END OF PROFESSIONAL WOFI THEME
+   ============================================================================= */
